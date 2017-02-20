@@ -19,6 +19,7 @@ except IOError:
 
 setup(
     name="RNNLM_pyWrap",
+    scripts=["RNNLM_pyWrap"],
     version="0.2.3",
     author="Mohamed Zahran",
     author_email="moh.a.zahran@gmail.com",
