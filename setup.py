@@ -7,7 +7,7 @@ from distutils.core import setup, Extension, os
 def install():
     return os.system("./scripts/download.sh")
 
-if not os.path.exists("./rnnlm"):
+if not os.path.exists("./RNNLM_pyWrap"):
     install()
 
 try:
@@ -17,19 +17,19 @@ except IOError:
     long_description = ""
 
 setup(
-    name="rnnlm-python",
+    name="RNNLM_pyWrap",
     version="0.2.3",
-    author="Hiroki Teranishi",
-    author_email="teranishihiroki@gmail.com",
+    author="Mohamed Zahran",
+    author_email="moh.a.zahran@gmail.com",
     description="python wrapper for RNNLM Toolkit (http://rnnlm.org/)",
     long_description=long_description,
-    url="https://github.com/chantera/rnnlm-python",
+    url="https://github.com/mohazahran/RNNLM_pyWrap",
     license="MIT",
-    py_modules=["rnnlm"],
+    py_modules=["RNNLM_pyWrap"],
     ext_modules=[
         Extension(
-            "_rnnlm",
-            sources=["./rnnlm-python/rnnlm_wrap.cxx", "./rnnlm/rnnlmlib.cpp"]
+            "_RNNLM_pyWrap",
+            sources=["./pythonWrap/rnnlm_wrap.cxx", "./pythonWrap/rnnlmlib.cpp"]
         )
     ],
     classifiers=[
