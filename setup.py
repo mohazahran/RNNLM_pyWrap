@@ -3,7 +3,7 @@
 
 from distutils.core import setup, Extension, os
 
-'''
+
 def install():
     return os.system("./scripts/download.sh")
 
@@ -16,7 +16,6 @@ try:
 except IOError:
     long_description = ""
 
-'''
 
 setup(
     name="RNNLM_pyWrap",
