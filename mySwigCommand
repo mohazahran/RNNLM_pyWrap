@@ -1,0 +1,29 @@
+g++ -c rnnlmlib.cpp -o rnnlmlib.o
+swig -c++ -python rnnlmlib.i
+g++ -O2 -fPIC -c rnnlmlib_wrap.cxx -I/usr/include/python2.7    or    g++ -O2 -fPIC -c rnnlmlib_wrap.cxx -I /Users/mohame11/anaconda/include/python2.7
+for mac
+g++ -lpython -dynamclib rnnlmlib.o rnnlmlib_wrap.o -o _rnnlmlib.so
+for unix
+ld -shared rnnlmlib.o rnnlmlib_wrap.o -o _rnnlmlib.so
+
+
+
+
+g++ -c rnnlmlib.cpp -o rnnlmlib.o
+swig -c++ -python rnnlmlib.i
+g++ -O2 -fPIC -c rnnlmlib_wrap.cxx -I/Users/mohame11/anaconda/include/python2.7
+g++ -lpython2.7 -dynamclib rnnlmlib.o rnnlmlib_wrap.o -o _rnnlmlib.so
+
+
+g++ -c rnnlmlib.cpp -o rnnlmlib.o
+swig -c++ -python rnnlmlib.i
+g++ -O2 -fPIC -c rnnlmlib_wrap.cxx -I/usr/include/python2.7
+g++ -lpython2.7 -dynamclib rnnlmlib.o rnnlmlib_wrap.o -o _rnnlmlib.so
+
+
+
+
+swig -c++ -python example.i
+g++ -O2 -fPIC -c example.cxx
+g++ -O2 -fPIC -c example_wrap.cxx -I/usr/include/python2.6
+g++ -lpython -dynamclib example.o example_wrap.o -o _example.so
