@@ -1818,6 +1818,10 @@ void CRnnLM::testNet()
     fclose(flog);
 }
 //Zahran
+//void CRnnLM::testNetOneInit()
+//{
+//    restoreNet();
+//}
 double CRnnLM::testNetOne(std::string line)
 {
     int a, b, word, last_word, wordcn;
@@ -1825,7 +1829,7 @@ double CRnnLM::testNetOne(std::string line)
     real prob_other, log_other, log_combine;
     double d;
     
-    restoreNet();
+    //restoreNet();
     
     
     //if (use_lmprob)
@@ -1862,6 +1866,7 @@ double CRnnLM::testNetOne(std::string line)
     log_combine=0;
     prob_other=0;
     wordcn=0;
+    
     copyHiddenLayerToInput();
     
     if (bptt>0)
